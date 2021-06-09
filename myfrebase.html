@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title> Employee Details </title>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="fix.js"></script>
+        <style>
+           body {
+  background: url("https://kyc-chain.com/wp-content/uploads/2019/05/1Mrl-GuXWiEUOkO8mfQFnTA.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#ip{
+margin-left: 250px;
+}
+#up{
+margin-left: 200px;
+}
+#studentList{
+  margin-left: 400px;
+  margin-right: 400px;
+}
+#studentLists{
+  margin-left: 400px;
+  margin-right: 400px;
+  background-color:ghostwhite;
+}
+h3{
+  text-decoration: underline;
+}
+#jk{
+  text-decoration: underline;
+}
+form{
+  margin-left: 40px;
+  margin-right: 100px;
+}
+
+
+        </style>
+    </head>
+    <body onload="loadUsers()">
+        <center>
+            <h3>Enter Employee Details!!</h3>
+            <div id="studentLists">
+              <label><span class="fa fa-user"></span> EmpName</label>
+            <input type="text" id="name" class="form-control" style="width:30%;" ><br>
+            <label><span class="	fa fa-graduation-cap"></span> Desination</label>
+            <input type="text" id="email" class="form-control" style="width:30%;" ><br><br>
+            <button onclick="add()" class="btn btn-primary" value="hello">ADD</button><br><br>
+          </div><br>
+            <div style="background-color: pink;" id="studentList"></div>
+         
+        </center>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 id="jk"> Update Employee Details</h1>
+        </div>
+        <div class="modal-body" style="padding:30px 30px;">
+            <form >
+               
+                <div class="form-group">
+                  <label class="lab"><span class="fa fa-user"></span> EmpName</label>
+                  <input type="text" class="form-control" id="username" placeholder="Enter Uname">
+                </div>
+                <div class="form-group">
+                  <label class="lab"><span class="fa fa-graduation-cap"></span> Designation</label>
+                  <input type="text" class="form-control" id="emailId" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                <label class="lab"><span class="fa fa-id-card"></span> EmpId</label>
+                  <input type="text" class="form-control" id="id" readonly>
+                </div>
+              <button id="up" type="submit" class="btn btn-primary " onclick="editStudent()">Update</button>
+              </form>
+        </div>
+        <div class="modal-footer" id="ip">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
+ 
+    </body>
+</html>
